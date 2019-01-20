@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.starterapp",
+    package = "io.instamobile.starterkit.rn.android",
 )
 
 android_resource(
     name = "res",
-    package = "com.starterapp",
+    package = "io.instamobile.starterkit.rn.android",
     res = "src/main/res",
 )
 

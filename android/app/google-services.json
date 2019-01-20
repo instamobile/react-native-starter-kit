@@ -1,0 +1,256 @@
+{
+  "project_info": {
+    "project_number": "706061484183",
+    "firebase_url": "https://ios-app-templates.firebaseio.com",
+    "project_id": "ios-app-templates",
+    "storage_bucket": "ios-app-templates.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:2d2dba50de144d81",
+        "android_client_info": {
+          "package_name": "com.instaflutter.onboarding.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:75277ea79fec2179",
+        "android_client_info": {
+          "package_name": "com.listingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:36a9299534d1ef8c",
+        "android_client_info": {
+          "package_name": "com.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:3f4fa551d34cc26f",
+        "android_client_info": {
+          "package_name": "com.restaurantapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:26b843fc13d81e90",
+        "android_client_info": {
+          "package_name": "io.instamobile.chat.rn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:43820dc9f598d053",
+        "android_client_info": {
+          "package_name": "io.instamobile.rnrealestateapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:de886a35dd843184",
+        "android_client_info": {
+          "package_name": "io.instamobile.starterkit.rn.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
