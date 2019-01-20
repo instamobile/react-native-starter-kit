@@ -58,7 +58,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.title}>Welcome {this.props.user.email}</Text>
       </ScrollView>
     );
   }

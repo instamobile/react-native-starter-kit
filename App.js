@@ -10,7 +10,7 @@ const store = createStore(AppReducer, applyMiddleware(middleware));
 
 console.disableYellowBox = true;
 
-class ListingApp extends React.Component {
+class StarterApp extends React.Component {
   render() {
     return (
       <Provider store={store}>
@@ -20,6 +20,6 @@ class ListingApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent("ListingApp", () => ListingApp);
+AppRegistry.registerComponent("StarterApp", () => StarterApp);
 
-export default ListingApp;
+export default StarterApp;
