@@ -4,8 +4,11 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.imagepicker.ImagePickerPackage;
 import io.invertase.firebase.RNFirebasePackage;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.imagepicker.ImagePickerPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.dylanvann.fastimage.FastImageViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import io.invertase.firebase.RNFirebasePackage;
@@ -15,6 +18,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
+import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import java.util.Arrays;
 import java.util.List;
 import android.support.multidex.MultiDexApplication;
@@ -43,11 +47,18 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new VectorIconsPackage(),
+            new MapsPackage(),
+            new ImagePickerPackage(),
             new RNFirebasePackage(),
-            new FastImageViewPackage(),
+            new ImagePickerPackage(),
+            new MapsPackage(),
             new FBSDKPackage(mCallbackManager),
+            new FastImageViewPackage(),
+            new VectorIconsPackage(),
+          new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
-          new RNFirebaseFirestorePackage()
+          new RNFirebaseFirestorePackage(),
+          new RNFirebaseStoragePackage()
       );
     }
 

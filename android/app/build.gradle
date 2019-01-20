@@ -108,15 +108,15 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
-    signingConfigs {    
-        release {   
-            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {  
-                storeFile file(MYAPP_RELEASE_STORE_FILE)    
-                storePassword MYAPP_RELEASE_STORE_PASSWORD  
-                keyAlias MYAPP_RELEASE_KEY_ALIAS    
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD  
-            }   
-        }   
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
     }
     splits {
         abi {
@@ -149,18 +149,29 @@ android {
 }
 
 dependencies {
-    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
-    implementation project(':react-native-vector-icons')
-    implementation project(':react-native-firebase')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-maps')
+    compile project(':react-native-image-picker')
+    compile project(':react-native-firebase')
+    compile project(':react-native-fast-image')
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile project(':react-native-fbsdk')
+    implementation project(':react-native-image-picker')
+    implementation project(':react-native-maps')
     implementation project(':react-native-fast-image')
-    compile fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':react-native-vector-icons')
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    compile "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+
+    implementation project(':react-native-firebase')
+    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
+    implementation project(':react-native-fbsdk')
     implementation "com.google.android.gms:play-services-base:15.0.1"
-    implementation 'com.google.firebase:firebase-core:16.0.3'
-    implementation "com.google.firebase:firebase-auth:16.0.3"	
-    implementation "com.google.firebase:firebase-firestore:17.1.0"	
+    implementation "com.google.firebase:firebase-core:16.0.3"
+    implementation "com.google.firebase:firebase-auth:16.0.3"
+    implementation "com.google.firebase:firebase-firestore:17.1.0"
     implementation "com.google.firebase:firebase-storage:16.0.2"
 }
 
@@ -170,3 +181,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply plugin: 'com.google.gms.google-services'

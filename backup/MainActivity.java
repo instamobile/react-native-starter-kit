@@ -1,4 +1,4 @@
-package com.listingapp;
+package io.instamobile.starterkit.rn.android;
 
 import android.content.Intent;
 import com.facebook.react.ReactActivity;

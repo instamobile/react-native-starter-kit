@@ -1,4 +1,4 @@
-package com.listingapp;
+package io.instamobile.starterkit.rn.android;
 
 import android.app.Application;
 

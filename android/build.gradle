@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext {   
-        buildToolsVersion = "27.0.3"    
-        minSdkVersion = 16  
-        compileSdkVersion = 27  
-        targetSdkVersion = 26   
-        supportLibVersion = "27.1.1"    
-        googlePlayServicesVersion = "15.0.1"    
+    ext {
+        buildToolsVersion = "27.0.3"
+        minSdkVersion = 16
+        compileSdkVersion = 27
+        targetSdkVersion = 26
+        supportLibVersion = "27.1.1"
+        googlePlayServicesVersion = "15.0.1"
     }
     repositories {
         google()
@@ -16,7 +16,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'com.google.gms:google-services:4.0.1'
-        
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -24,17 +24,18 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         mavenLocal()
-        jcenter()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
+        google()
+        jcenter()
     }
 }
 
-task wrapper(type: Wrapper) {   
-    gradleVersion = '4.4'   
-    distributionUrl = distributionUrl.replace("bin", "all") 
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+    distributionUrl = distributionUrl.replace("bin", "all")
 }
