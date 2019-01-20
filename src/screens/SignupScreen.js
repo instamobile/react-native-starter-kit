@@ -10,10 +10,10 @@ class SignupScreen extends React.Component {
 
     this.state = {
       loading: true,
-      fullname: "John smith",
-      phone: "111",
-      email: "jhon@gmail.com",
-      password: "111111"
+      fullname: "",
+      phone: "",
+      email: "",
+      password: ""
     };
   }
 

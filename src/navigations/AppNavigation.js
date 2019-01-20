@@ -11,7 +11,13 @@ import {
   reduxifyNavigator
 } from "react-navigation-redux-helpers";
 import HomeScreen from "../screens/HomeScreen";
+import CategoryScreen from "../screens/CategoryScreen";
+import DetailScreen from "../screens/DetailScreen";
+import ListingScreen from "../screens/ListingScreen";
 import LoginScreen from "../screens/LoginScreen";
+import MapScreen from "../screens/MapScreen";
+import SavedListingScreen from "../screens/SavedListingScreen";
+import SearchScreen from "../screens/SearchScreen";
 import SignupScreen from "../screens/SignupScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import { AppIcon, AppStyles } from "../AppStyles";
@@ -51,7 +57,10 @@ const LoginStack = createStackNavigator(
 
 const HomeStack = createStackNavigator(
   {
-    Home: { screen: HomeScreen }
+    Home: { screen: HomeScreen },
+    Listing: { screen: ListingScreen },
+    Detail: { screen: DetailScreen },
+    Map: { screen: MapScreen }
   },
   {
     initialRouteName: "Home",
@@ -66,9 +75,67 @@ const HomeStack = createStackNavigator(
   }
 );
 
+const CollectionStack = createStackNavigator(
+  {
+    Category: { screen: CategoryScreen },
+    Listing: { screen: ListingScreen },
+    Detail: { screen: DetailScreen },
+    Map: { screen: MapScreen }
+  },
+  {
+    initialRouteName: "Category",
+    headerMode: "float",
+    headerLayoutPreset: "center",
+    cardStyle: { backgroundColor: "#FFFFFF" },
+    navigationOptions: ({ navigation }) => ({
+      headerTintColor: "red",
+      headerTitleStyle: styles.headerTitleStyle
+    })
+  }
+);
+
+const SavedListingStack = createStackNavigator(
+  {
+    SavedListing: { screen: SavedListingScreen },
+    Detail: { screen: DetailScreen },
+    Map: { screen: MapScreen }
+  },
+  {
+    initialRouteName: "SavedListing",
+    headerMode: "float",
+    headerLayoutPreset: "center",
+    cardStyle: { backgroundColor: "#FFFFFF" },
+    navigationOptions: ({ navigation }) => ({
+      headerTintColor: "red",
+      headerTitleStyle: styles.headerTitleStyle
+    })
+  }
+);
+
+const SearchStack = createStackNavigator(
+  {
+    Search: { screen: SearchScreen },
+    Detail: { screen: DetailScreen },
+    Map: { screen: MapScreen }
+  },
+  {
+    initialRouteName: "Search",
+    headerMode: "float",
+    headerLayoutPreset: "center",
+    cardStyle: { backgroundColor: "#FFFFFF" },
+    navigationOptions: ({ navigation }) => ({
+      headerTintColor: "red",
+      headerTitleStyle: styles.headerTitleStyle
+    })
+  }
+);
+
 const TabNavigator = createBottomTabNavigator(
   {
-    Home: { screen: HomeStack }
+    Home: { screen: HomeStack },
+    Collections: { screen: CollectionStack },
+    Saved: { screen: SavedListingStack },
+    Search: { screen: SearchStack }
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -77,6 +144,12 @@ const TabNavigator = createBottomTabNavigator(
         let iconName;
         if (routeName === "Home") {
           iconName = AppIcon.images.home;
+        } else if (routeName === "Collections") {
+          iconName = AppIcon.images.collections;
+        } else if (routeName === "Saved") {
+          iconName = AppIcon.images.heart;
+        } else if (routeName === "Search") {
+          iconName = AppIcon.images.search;
         }
 
         // You can return any component that you like here! We usually use an

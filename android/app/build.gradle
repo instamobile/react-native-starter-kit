@@ -98,7 +98,8 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "io.instamobile.starterkit.rn.android"
+        applicationId "io.instamobile.starterkit.rn.android
+"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -149,11 +150,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-vector-icons')
-    compile project(':react-native-maps')
-    compile project(':react-native-image-picker')
-    compile project(':react-native-firebase')
-    compile project(':react-native-fast-image')
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile project(':react-native-fbsdk')
     implementation project(':react-native-image-picker')

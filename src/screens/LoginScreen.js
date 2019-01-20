@@ -12,8 +12,8 @@ class LoginScreen extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      email: "flo@gmail.com",
-      password: "parola"
+      email: "",
+      password: ""
     };
   }
 

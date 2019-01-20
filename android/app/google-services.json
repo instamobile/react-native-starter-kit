@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:706061484183:android:75277ea79fec2179",
         "android_client_info": {
-          "package_name": "io.instamobile.starterkit.rn.android"
+          "package_name": "com.listingapp"
         }
       },
       "oauth_client": [
