@@ -1,0 +1,4 @@
+ios/Pods
+node_modules
+android/app/build
+ios/Podfile.lock
