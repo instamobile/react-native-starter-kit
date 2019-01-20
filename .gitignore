@@ -1,3 +1,4 @@
+android/.gradle
 ios/Pods
 node_modules
 android/app/build
