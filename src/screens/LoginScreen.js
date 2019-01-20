@@ -19,6 +19,10 @@ class LoginScreen extends React.Component {
 
   onPressLogin = () => {
     const { email, password } = this.state;
+    if (email.length <= 0 || password.length <= 0) {
+      alert("Please fill out the required fields.");
+      return;
+    }
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
