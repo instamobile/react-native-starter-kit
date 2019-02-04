@@ -163,10 +163,10 @@ dependencies {
     implementation project(':react-native-firebase')
     implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
     implementation project(':react-native-fbsdk')
-    implementation "com.google.android.gms:play-services-base:15.0.1"
-    implementation "com.google.firebase:firebase-core:16.0.3"
-    implementation "com.google.firebase:firebase-auth:16.0.3"
-    implementation "com.google.firebase:firebase-firestore:17.1.0"
+    implementation "com.google.android.gms:play-services-base:16.0.1"
+    implementation "com.google.firebase:firebase-core:16.0.4"
+    implementation "com.google.firebase:firebase-auth:16.0.4"
+    implementation "com.google.firebase:firebase-firestore:17.1.2"
     implementation "com.google.firebase:firebase-storage:16.0.2"
 }
 

@@ -250,6 +250,41 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706061484183:android:6c2be04bca755d22",
+        "android_client_info": {
+          "package_name": "io.instamobile.storelocator.android.rn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "706061484183-oq6rdp7kjje8v513potdjk1cruth0kge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

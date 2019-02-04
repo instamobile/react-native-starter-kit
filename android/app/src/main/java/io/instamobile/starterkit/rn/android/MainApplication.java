@@ -3,6 +3,10 @@ package io.instamobile.starterkit.rn.android;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.imagepicker.ImagePickerPackage;
+import io.invertase.firebase.RNFirebasePackage;
 import com.imagepicker.ImagePickerPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.dylanvann.fastimage.FastImageViewPackage;
@@ -42,12 +46,12 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ImagePickerPackage(),
+            new VectorIconsPackage(),
             new MapsPackage(),
+            new RNFirebasePackage(),
+            new ImagePickerPackage(),
             new FBSDKPackage(mCallbackManager),
             new FastImageViewPackage(),
-            new VectorIconsPackage(),
-          new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
           new RNFirebaseFirestorePackage(),
           new RNFirebaseStoragePackage()
