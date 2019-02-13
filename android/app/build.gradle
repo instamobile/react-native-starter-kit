@@ -101,9 +101,9 @@ android {
         applicationId "io.instamobile.starterkit.rn.android"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 3
         multiDexEnabled true
-        versionName "1.0"
+        versionName "1.2"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
