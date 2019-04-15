@@ -23,4 +23,4 @@ Bootstrap your app development by using this awesome react native starter kit, i
 <a href="https://www.instamobile.io">
 	<img src="https://www.instamobile.io/wp-content/uploads/2019/01/Simulator-Screen-Shot-iPhone-XS-2019-01-20-at-16.18.39-473x1024.png" alt="registration screen firebase react native" width="210" height="456" /></a>
 
-Coded with ❤️ by <a href="https://www.instamobile.io">Instamobile</a>.
+Coded with ❤️ by <a href="https://www.instamobile.io">Instamobile</a> and <a href="https://www.iosapptemplates.com">iOS App Templates</a>.
