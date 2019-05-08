@@ -4,6 +4,7 @@ pod 'Firebase/Core', '~> 5.9.0'
 pod 'Firebase/Auth', '~> 5.9.0'
 pod 'Firebase/Firestore', '~> 5.9.0'
 pod 'Firebase/Storage', '~> 5.9.0'
+pod 'GoogleSignIn', '~> 4.4.0'
 pod 'GoogleAppMeasurement', '~> 5.2.0'
 pod 'FBSDKCoreKit', '~> 4.40.0'
 pod 'FBSDKLoginKit', '~> 4.40.0'
@@ -51,6 +52,8 @@ target 'ListingApp' do
   pod 'Google-Maps-iOS-Utils' # Remove this line if you don't want to support GoogleMaps on iOS
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
 
 end
 

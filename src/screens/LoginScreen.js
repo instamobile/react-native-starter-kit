@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View, Alert } from "react-native";
 import Button from "react-native-button";
 import { AppStyles } from "../AppStyles";
 import firebase from "react-native-firebase";
+import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import { AsyncStorage } from "react-native";
 const FBSDK = require("react-native-fbsdk");
 const { LoginManager, AccessToken } = FBSDK;
@@ -15,6 +16,7 @@ class LoginScreen extends React.Component {
       email: "",
       password: ""
     };
+    GoogleSignin.configure();
   }
 
   onPressLogin = () => {
@@ -115,6 +117,51 @@ class LoginScreen extends React.Component {
     );
   };
 
+  onPressGoogle = () => {
+    GoogleSignin.signIn()
+      .then((data) => {
+        // Create a new Firebase credential with the token
+        const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken);
+        // Login with the credential
+        const accessToken = data.accessToken
+        const { idToken } = GoogleSignin.getTokens()
+        return firebase.auth().signInWithCredential(credential);
+      })
+      .then((result) => {
+        var user = result.user;
+        // AsyncStorage.setItem(
+        //   "@loggedInUserID:googleCredentialAccessToken",
+        //   accessToken
+        // );
+        console.log(user);
+        AsyncStorage.setItem("@loggedInUserID:id", user.uid);
+        var userDict = {
+          id: user.uid,
+          fullname: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL
+        };
+        var data = {
+          ...userDict,
+          appIdentifier: "rn-android-universal-listings"
+        };
+        console.log('data', data);
+        firebase
+          .firestore()
+          .collection("users")
+          .doc(user.uid)
+          .set(data);
+        this.props.navigation.dispatch({
+          type: "Login",
+          user: userDict
+        });
+      })
+      .catch((error) => {
+        const { code, message } = error;
+        Alert.alert("google Sign in error", error);
+      });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -155,6 +202,12 @@ class LoginScreen extends React.Component {
         >
           Login with Facebook
         </Button>
+        <GoogleSigninButton
+          style={styles.googleContainer}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Light}
+          onPress={this.onPressGoogle}
+        />
       </View>
     );
   }
@@ -219,13 +272,22 @@ const styles = StyleSheet.create({
     color: AppStyles.color.text
   },
   facebookContainer: {
-    width: AppStyles.buttonWidth.main,
+    width: 192,
     backgroundColor: AppStyles.color.facebook,
     borderRadius: AppStyles.borderRadius.main,
     padding: 10,
-    marginTop: 30
+    marginTop: 30,
   },
   facebookText: {
+    color: AppStyles.color.white
+  },
+  googleContainer: {
+    width: 192,
+    height: 48,
+    marginTop: 30,
+    
+  },
+  googleText: {
     color: AppStyles.color.white
   }
 });

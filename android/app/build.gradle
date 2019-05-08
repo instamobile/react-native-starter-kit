@@ -149,6 +149,12 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-maps')
+    compile project(':react-native-image-picker')
+    compile project(':react-native-firebase')
+    compile project(':react-native-fast-image')
+    compile project(':react-native-google-signin')
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile project(':react-native-fbsdk')
     implementation project(':react-native-image-picker')

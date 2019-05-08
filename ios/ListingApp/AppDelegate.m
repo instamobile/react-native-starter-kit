@@ -8,6 +8,7 @@
 #import <Firebase.h>
 #import "AppDelegate.h"
 
+#import <RNGoogleSignin/RNGoogleSignin.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <GoogleMaps/GoogleMaps.h>
@@ -18,6 +19,8 @@
 {
   [GMSServices provideAPIKey:@"AIzaSyBDsgl4CL11jZ__FJrm_-U8wjA5SyHKj0U"];
   [FIRApp configure];
+  [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
+  [GIDSignIn sharedInstance].delegate = self;
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
   NSURL *jsCodeLocation;
@@ -46,10 +49,10 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                        openURL:url
-                                              sourceApplication:sourceApplication
-                                                     annotation:annotation];
+  return [[GIDSignIn sharedInstance] handleURL:url
+                             sourceApplication:sourceApplication
+                                    annotation:annotation];
 }
+
 
 @end
