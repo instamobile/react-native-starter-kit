@@ -1,0 +1,7 @@
+dependencies: \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Views/RCTRefreshControl.m \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Views/RCTRefreshControl.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native/React/Base/RCTDefines.h
