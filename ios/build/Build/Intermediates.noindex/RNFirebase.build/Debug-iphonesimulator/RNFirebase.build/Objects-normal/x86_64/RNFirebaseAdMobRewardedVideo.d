@@ -48,6 +48,25 @@ dependencies: \
   ../../../ios/Pods/Headers/Public/FirebaseAuth/FIRPhoneAuthCredential.h \
   ../../../ios/Pods/Headers/Public/FirebaseAuth/FIRPhoneAuthProvider.h \
   ../../../ios/Pods/Headers/Public/FirebaseAuth/FIRAuthSettings.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FirebaseFirestore.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRCollectionReference.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRQuery.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreSource.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRListenerRegistration.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentChange.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentReference.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentSnapshot.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFieldPath.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFieldValue.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestore.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreErrors.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreSettings.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRGeoPoint.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRQuerySnapshot.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRSnapshotMetadata.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRTimestamp.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRTransaction.h \
+  ../../../ios/Pods/Headers/Public/FirebaseFirestore/FIRWriteBatch.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native-firebase/ios/../../../ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native-firebase/ios/../../../ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/node_modules/react-native-firebase/ios/../../../ios/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h \

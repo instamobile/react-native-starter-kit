@@ -51,6 +51,25 @@ dependencies: \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseStorage/FIRStorageConstants.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseStorage/FIRStorage.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseStorage/FirebaseStorage.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRWriteBatch.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRTransaction.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRTimestamp.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRSnapshotMetadata.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRQuerySnapshot.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRGeoPoint.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreSettings.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreErrors.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestore.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFieldValue.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFieldPath.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentSnapshot.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentReference.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRDocumentChange.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRListenerRegistration.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRFirestoreSource.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRQuery.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FIRCollectionReference.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseFirestore/FirebaseFirestore.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseAuth/FIRAuthSettings.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseAuth/FIRPhoneAuthProvider.h \
   /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Public/FirebaseAuth/FIRPhoneAuthCredential.h \

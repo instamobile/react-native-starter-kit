@@ -1247,6 +1247,34 @@
 		<data>
 		C9pZx7zT05J94EfgkYdaRCi/0as=
 		</data>
+		<key>gRPCCertificates.bundle/Info.plist</key>
+		<data>
+		8FNpdjaFLiPXv+XvWxwgd6/2aao=
+		</data>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeDirectory</key>
+		<data>
+		LYwAw9g04vwYItuBnPxgAxePUe4=
+		</data>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements</key>
+		<data>
+		OnX22wWFKRSOFN1+obRynMCeyXM=
+		</data>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements-1</key>
+		<data>
+		8Lz8SRL2PjlFMPV3rBWTpfFWYPo=
+		</data>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeResources</key>
+		<data>
+		etqAXFPRzwjksOAkvgyEdyiBK34=
+		</data>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeSignature</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>gRPCCertificates.bundle/roots.pem</key>
+		<data>
+		1un2TR79P6oIBAJhUqOL95VfdeI=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -3575,6 +3603,83 @@
 			<key>hash2</key>
 			<data>
 			17EKHr4YMOWi8I9JA7moDiwZEsDdL3O5P88r+DIhZgI=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8FNpdjaFLiPXv+XvWxwgd6/2aao=
+			</data>
+			<key>hash2</key>
+			<data>
+			cwFjtUa3nqjMUAsVT5cNxaJozTL+hka+Auyfy/HH6sw=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeDirectory</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LYwAw9g04vwYItuBnPxgAxePUe4=
+			</data>
+			<key>hash2</key>
+			<data>
+			pi5/Gzn4edho6+2VtSwEqK13Jzb/oQ+Mqkh3RwoJ4+o=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OnX22wWFKRSOFN1+obRynMCeyXM=
+			</data>
+			<key>hash2</key>
+			<data>
+			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements-1</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8Lz8SRL2PjlFMPV3rBWTpfFWYPo=
+			</data>
+			<key>hash2</key>
+			<data>
+			CGUCGrtQhsNqddvdK/Iod51JsHoyQu3IslcGX2VPs2k=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			etqAXFPRzwjksOAkvgyEdyiBK34=
+			</data>
+			<key>hash2</key>
+			<data>
+			iH/KPx0vNKz5azgWjCUxjPYbOayYUkeZqVTBvciNCUY=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/_CodeSignature/CodeSignature</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>gRPCCertificates.bundle/roots.pem</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1un2TR79P6oIBAJhUqOL95VfdeI=
+			</data>
+			<key>hash2</key>
+			<data>
+			uumoU5yPmZR5KcJgpWmAh0ty4XeaaSIRldH+wOtjQs4=
 			</data>
 		</dict>
 	</dict>

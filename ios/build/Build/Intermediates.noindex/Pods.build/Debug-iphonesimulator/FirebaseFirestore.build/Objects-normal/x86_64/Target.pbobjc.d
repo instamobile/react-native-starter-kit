@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/firestore/local/Target.pbobjc.m \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers_RuntimeSupport.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBDescriptor_PackagePrivate.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBExtensionInternals.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBMessage_PackagePrivate.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBRootObject_PackagePrivate.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBUtilities_PackagePrivate.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/firestore/local/Target.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbobjc.h \
+  /Users/shola.emmanuel/GitHubProjects/c/test/im/react-native-starter-kit/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/api/Annotations.pbobjc.h
