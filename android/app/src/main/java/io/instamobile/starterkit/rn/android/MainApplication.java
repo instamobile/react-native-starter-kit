@@ -9,7 +9,6 @@ import com.imagepicker.ImagePickerPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.dylanvann.fastimage.FastImageViewPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.imagepicker.ImagePickerPackage;
 import io.invertase.firebase.RNFirebasePackage;
@@ -35,9 +34,9 @@ import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.appevents.AppEventsLogger;
 
 public class MainApplication extends MultiDexApplication implements ReactApplication {
-  
+
   private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
-  
+
   protected static CallbackManager getCallbackManager() {
     return mCallbackManager;
   }
@@ -58,15 +57,10 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
             new RNFirebasePackage(),
             new FastImageViewPackage(),
             new RNGoogleSigninPackage(),
-            new VectorIconsPackage(),
-            new MapsPackage(),
-            new RNFirebasePackage(),
-            new ImagePickerPackage(),
             new FBSDKPackage(mCallbackManager),
-            new FastImageViewPackage(),
-          new RNFirebaseAuthPackage(),
-          new RNFirebaseFirestorePackage(),
-          new RNFirebaseStoragePackage()
+            new RNFirebaseAuthPackage(),
+            new RNFirebaseFirestorePackage(),
+            new RNFirebaseStoragePackage()
       );
     }
 
