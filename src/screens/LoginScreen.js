@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View, Alert } from "react-native";
+import { StyleSheet, Text, TextInput, View, Alert, ActivityIndicator } from "react-native";
 import Button from "react-native-button";
 import { AppStyles } from "../AppStyles";
 import firebase from "react-native-firebase";
@@ -12,7 +12,7 @@ class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      loading: false,
       email: "",
       password: ""
     };
@@ -118,22 +118,23 @@ class LoginScreen extends React.Component {
   };
 
   onPressGoogle = () => {
+    this.setState({loading: true});
     GoogleSignin.signIn()
       .then((data) => {
+        console.log('data', data);
         // Create a new Firebase credential with the token
-        const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken);
+        const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken);
         // Login with the credential
-        const accessToken = data.accessToken
-        const { idToken } = GoogleSignin.getTokens()
-        return firebase.auth().signInWithCredential(credential);
-      })
-      .then((result) => {
-        var user = result.user;
+        const accessToken = data.idToken;
         AsyncStorage.setItem(
           "@loggedInUserID:googleCredentialAccessToken",
           accessToken
         );
-        console.log(user);
+        return firebase.auth().signInWithCredential(credential);
+      })
+      .then((result) => {
+        this.setState({loading: false})
+        var user = result.user;
         AsyncStorage.setItem("@loggedInUserID:id", user.uid);
         var userDict = {
           id: user.uid,
@@ -158,7 +159,9 @@ class LoginScreen extends React.Component {
       })
       .catch((error) => {
         const { code, message } = error;
-        
+        this.setState({loading: false}, () => {
+          alert(error)
+        });
       });
   }
 
@@ -202,12 +205,16 @@ class LoginScreen extends React.Component {
         >
           Login with Facebook
         </Button>
-        <GoogleSigninButton
-          style={styles.googleContainer}
-          size={GoogleSigninButton.Size.Wide}
-          color={GoogleSigninButton.Color.Light}
-          onPress={this.onPressGoogle}
-        />
+        {this.state.loading ? (
+          <ActivityIndicator style={{marginTop: 30}} size="large" animating={this.state.loading} color={AppStyles.color.tint} />
+        ) : (
+          <GoogleSigninButton
+            style={styles.googleContainer}
+            size={GoogleSigninButton.Size.Wide}
+            color={GoogleSigninButton.Color.Light}
+            onPress={this.onPressGoogle}
+          />
+        )}
       </View>
     );
   }
