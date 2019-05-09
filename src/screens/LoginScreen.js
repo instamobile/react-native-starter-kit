@@ -129,10 +129,10 @@ class LoginScreen extends React.Component {
       })
       .then((result) => {
         var user = result.user;
-        // AsyncStorage.setItem(
-        //   "@loggedInUserID:googleCredentialAccessToken",
-        //   accessToken
-        // );
+        AsyncStorage.setItem(
+          "@loggedInUserID:googleCredentialAccessToken",
+          accessToken
+        );
         console.log(user);
         AsyncStorage.setItem("@loggedInUserID:id", user.uid);
         var userDict = {
@@ -158,7 +158,7 @@ class LoginScreen extends React.Component {
       })
       .catch((error) => {
         const { code, message } = error;
-        Alert.alert("google Sign in error", error);
+        
       });
   }
 
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     width: 192,
     height: 48,
     marginTop: 30,
-    
+
   },
   googleText: {
     color: AppStyles.color.white
