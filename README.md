@@ -23,7 +23,7 @@ Bootstrap your app development by using this awesome react native starter kit, i
 <a href="https://www.instamobile.io">
 	<img src="https://www.instamobile.io/wp-content/uploads/2019/01/Simulator-Screen-Shot-iPhone-XS-2019-01-20-at-16.18.39-473x1024.png" alt="registration screen firebase react native" width="210" height="456" /></a>
 
-## Google signin in
+## Google signin
 
 - when signing in with google on android and you get "developer_error google sign in".
 - take the following steps:
