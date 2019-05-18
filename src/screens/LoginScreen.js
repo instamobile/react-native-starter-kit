@@ -1,9 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View, Alert, ActivityIndicator } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Alert,
+  ActivityIndicator
+} from "react-native";
 import Button from "react-native-button";
 import { AppStyles } from "../AppStyles";
 import firebase from "react-native-firebase";
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
 import { AsyncStorage } from "react-native";
 const FBSDK = require("react-native-fbsdk");
 const { LoginManager, AccessToken } = FBSDK;
@@ -16,7 +23,10 @@ class LoginScreen extends React.Component {
       email: "",
       password: ""
     };
-    GoogleSignin.configure();
+    GoogleSignin.configure({
+      webClientId:
+        "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com"
+    });
   }
 
   onPressLogin = () => {
@@ -118,12 +128,14 @@ class LoginScreen extends React.Component {
   };
 
   onPressGoogle = () => {
-    this.setState({loading: true});
+    this.setState({ loading: true });
     GoogleSignin.signIn()
-      .then((data) => {
-        console.log('data', data);
+      .then(data => {
+        console.log("data", data);
         // Create a new Firebase credential with the token
-        const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken);
+        const credential = firebase.auth.GoogleAuthProvider.credential(
+          data.idToken
+        );
         // Login with the credential
         const accessToken = data.idToken;
         AsyncStorage.setItem(
@@ -132,8 +144,8 @@ class LoginScreen extends React.Component {
         );
         return firebase.auth().signInWithCredential(credential);
       })
-      .then((result) => {
-        this.setState({loading: false})
+      .then(result => {
+        this.setState({ loading: false });
         var user = result.user;
         AsyncStorage.setItem("@loggedInUserID:id", user.uid);
         var userDict = {
@@ -146,7 +158,7 @@ class LoginScreen extends React.Component {
           ...userDict,
           appIdentifier: "rn-android-universal-listings"
         };
-        console.log('data', data);
+        console.log("data", data);
         firebase
           .firestore()
           .collection("users")
@@ -157,13 +169,13 @@ class LoginScreen extends React.Component {
           user: userDict
         });
       })
-      .catch((error) => {
+      .catch(error => {
         const { code, message } = error;
-        this.setState({loading: false}, () => {
-          alert(error)
+        this.setState({ loading: false }, () => {
+          alert(error);
         });
       });
-  }
+  };
 
   render() {
     return (
@@ -206,7 +218,12 @@ class LoginScreen extends React.Component {
           Login with Facebook
         </Button>
         {this.state.loading ? (
-          <ActivityIndicator style={{marginTop: 30}} size="large" animating={this.state.loading} color={AppStyles.color.tint} />
+          <ActivityIndicator
+            style={{ marginTop: 30 }}
+            size="large"
+            animating={this.state.loading}
+            color={AppStyles.color.tint}
+          />
         ) : (
           <GoogleSigninButton
             style={styles.googleContainer}
@@ -283,7 +300,7 @@ const styles = StyleSheet.create({
     backgroundColor: AppStyles.color.facebook,
     borderRadius: AppStyles.borderRadius.main,
     padding: 10,
-    marginTop: 30,
+    marginTop: 30
   },
   facebookText: {
     color: AppStyles.color.white
@@ -291,8 +308,7 @@ const styles = StyleSheet.create({
   googleContainer: {
     width: 192,
     height: 48,
-    marginTop: 30,
-
+    marginTop: 30
   },
   googleText: {
     color: AppStyles.color.white
