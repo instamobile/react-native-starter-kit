@@ -25,7 +25,7 @@ Bootstrap your app development by using this awesome react native starter kit, i
 
 ## Google signin in
 
-- when sigining in with google on android and you get "developer_error google sign in".
+- when signing in with google on android and you get "developer_error google sign in".
 - take the following steps:
 
       	* in the command line, enter:
