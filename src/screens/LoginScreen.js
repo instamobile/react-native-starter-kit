@@ -9,7 +9,9 @@ import {
 } from "react-native";
 import Button from "react-native-button";
 import { AppStyles } from "../AppStyles";
-import firebase from "react-native-firebase";
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore'
 import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
 import { AsyncStorage } from "react-native";
 const FBSDK = require("react-native-fbsdk");
@@ -35,14 +37,12 @@ class LoginScreen extends React.Component {
       alert("Please fill out the required fields.");
       return;
     }
-    firebase
-      .auth()
+    auth()
       .signInWithEmailAndPassword(email, password)
       .then(response => {
         const { navigation } = this.props;
         user_uid = response.user._user.uid;
-        firebase
-          .firestore()
+        firestore()
           .collection("users")
           .doc(user_uid)
           .get()
@@ -85,8 +85,7 @@ class LoginScreen extends React.Component {
               data.accessToken
             );
             const accessToken = data.accessToken;
-            firebase
-              .auth()
+            auth()
               .signInWithCredential(credential)
               .then(result => {
                 var user = result.user;
@@ -105,8 +104,7 @@ class LoginScreen extends React.Component {
                   ...userDict,
                   appIdentifier: "rn-android-universal-listings"
                 };
-                firebase
-                  .firestore()
+                firestore()
                   .collection("users")
                   .doc(user.uid)
                   .set(data);
@@ -142,7 +140,7 @@ class LoginScreen extends React.Component {
           "@loggedInUserID:googleCredentialAccessToken",
           accessToken
         );
-        return firebase.auth().signInWithCredential(credential);
+        return auth().signInWithCredential(credential);
       })
       .then(result => {
         this.setState({ loading: false });
@@ -159,8 +157,7 @@ class LoginScreen extends React.Component {
           appIdentifier: "rn-android-universal-listings"
         };
         console.log("data", data);
-        firebase
-          .firestore()
+        firestore()
           .collection("users")
           .doc(user.uid)
           .set(data);
