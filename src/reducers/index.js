@@ -1,7 +1,7 @@
 import { NavigationActions } from "react-navigation";
 import { combineReducers } from "redux";
 import { RootNavigator } from "../navigations/AppNavigation";
-import auth from '@react-native-firebase/auth';
+import auther from '@react-native-firebase/auth';
 import { AsyncStorage } from "react-native";
 
 // Start with two routes: The Main screen, with the Login screen on top.
@@ -21,7 +21,7 @@ function nav(state = initialNavState, action) {
       break;
     case "Logout":
       try {
-        auth().signOut();
+        auther().signOut();
         nextState = RootNavigator.router.getStateForAction(
           NavigationActions.navigate({ routeName: "LoginStack" }),
           state
