@@ -15,7 +15,8 @@
     "react-native": "0.62.0",
     "react-native-button": "^3.0.1",
     "react-native-fast-image": "^8.1.5",
-    "react-native-fbsdk": "^1.1.2"
+    "react-native-fbsdk": "^1.1.2",
+    "react-native-google-signin": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
