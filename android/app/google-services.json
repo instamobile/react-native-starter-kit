@@ -220,7 +220,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:706061484183:android:de886a35dd843184",
         "android_client_info": {
-          "package_name": "io.instamobile.starterkit.rn.android"
+          "package_name": "com.rn_starter_kit"
         }
       },
       "oauth_client": [
