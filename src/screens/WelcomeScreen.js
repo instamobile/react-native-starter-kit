@@ -3,7 +3,9 @@ import Button from "react-native-button";
 import { Text, View, StyleSheet } from "react-native";
 import { AppStyles } from "../AppStyles";
 import { AsyncStorage, ActivityIndicator } from "react-native";
-import firebase from "react-native-firebase";
+import auth from '@react-native-firebase/auth';
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
 
 class WelcomeScreen extends React.Component {
   static navigationOptions = {
@@ -59,13 +61,11 @@ class WelcomeScreen extends React.Component {
       password != null &&
       password.length > 0
     ) {
-      firebase
-        .auth()
+      auth()
         .signInWithEmailAndPassword(email, password)
         .then(user => {
           const { navigation } = this.props;
-          firebase
-            .firestore()
+          firestore()
             .collection("users")
             .doc(id)
             .get()
@@ -103,8 +103,7 @@ class WelcomeScreen extends React.Component {
     );
     if (id != null && id.length > 0 && fbToken != null && fbToken.length > 0) {
       const credential = firebase.auth.FacebookAuthProvider.credential(fbToken);
-      firebase
-        .auth()
+      auth()
         .signInWithCredential(credential)
         .then(result => {
           var user = result.user;
