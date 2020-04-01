@@ -14,7 +14,8 @@
     "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-button": "^3.0.1",
-    "react-native-fast-image": "^8.1.5"
+    "react-native-fast-image": "^8.1.5",
+    "react-native-fbsdk": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
