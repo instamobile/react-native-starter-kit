@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.7",
     "@react-native-firebase/app": "^6.3.4",
     "@react-native-firebase/auth": "^6.3.4",
     "@react-native-firebase/firestore": "^6.3.4",
@@ -21,9 +22,15 @@
     "react-native-fbsdk": "^1.1.2",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-google-signin": "^2.1.1",
+    "react-native-reanimated": "^1.7.1",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.4.0",
     "react-native-vector-icons": "^6.6.0",
-    "react-navigation": "^4.0.0",
+    "react-navigation": "^4.3.6",
+    "react-navigation-drawer": "^2.4.10",
     "react-navigation-redux-helpers": "^4.0.1",
+    "react-navigation-stack": "^2.3.10",
+    "react-navigation-tabs": "^2.8.10",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5"
   },

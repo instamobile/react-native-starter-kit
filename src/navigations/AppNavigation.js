@@ -1,14 +1,12 @@
 import React from "react";
 import { Animated, Easing, Image, StyleSheet } from "react-native";
 import { connect } from "react-redux";
-import {
-  DrawerNavigator,
-  createStackNavigator,
-  createBottomTabNavigator
-} from "react-navigation";
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createStackNavigator} from 'react-navigation-stack'
+import {createDrawerNavigator} from 'react-navigation-drawer'
 import {
   createReactNavigationReduxMiddleware,
-  reduxifyNavigator
+  createReduxContainer
 } from "react-navigation-redux-helpers";
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
@@ -27,7 +25,6 @@ const noTransitionConfig = () => ({
 });
 
 const middleware = createReactNavigationReduxMiddleware(
-  "root",
   state => state.nav
 );
 
@@ -105,7 +102,7 @@ const TabNavigator = createBottomTabNavigator(
 );
 
 // drawer stack
-const DrawerStack = DrawerNavigator(
+const DrawerStack = createDrawerNavigator(
   {
     Tab: TabNavigator
   },
@@ -134,7 +131,7 @@ const RootNavigator = createStackNavigator(
   }
 );
 
-const AppWithNavigationState = reduxifyNavigator(RootNavigator, "root");
+const AppWithNavigationState = createReduxContainer(RootNavigator, "root");
 
 const mapStateToProps = state => ({
   state: state.nav
