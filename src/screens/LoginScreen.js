@@ -71,7 +71,7 @@ class LoginScreen extends React.Component {
   };
 
   onPressFacebook = () => {
-    LoginManager.logInWithReadPermissions([
+    LoginManager.logInWithPermissions([
       "public_profile",
       "user_friends",
       "email"
