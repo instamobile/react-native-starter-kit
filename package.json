@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
-    "@react-native-firebase/app": "^6.3.4",
-    "@react-native-firebase/auth": "^6.3.4",
-    "@react-native-firebase/firestore": "^6.3.4",
+    "@react-native-firebase/app": "^6.7.1",
+    "@react-native-firebase/auth": "^6.7.1",
+    "@react-native-firebase/firestore": "^6.7.1",
     "moment": "^2.24.0",
-    "react": "16.11.0",
-    "react-native": "0.62.0",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
     "react-native-button": "^3.0.1",
     "react-native-fast-image": "^8.1.5",
     "react-native-fbsdk": "^1.1.2",
@@ -35,14 +35,14 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/runtime": "^7.9.2",
-    "@react-native-community/eslint-config": "^1.0.0",
-    "babel-jest": "^25.2.4",
-    "eslint": "^6.8.0",
-    "jest": "^25.2.4",
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "7.14.0",
+    "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.11.0"
+    "react-test-renderer": "16.13.1"
   },
   "jest": {
     "preset": "react-native"
