@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     color: "black",
     flex: 1,
-    fontFamily: AppStyles.fontName.main
   }
 });
 

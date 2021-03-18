@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   or: {
-    fontFamily: AppStyles.fontName.main,
     color: "black",
     marginTop: 40,
     marginBottom: 10
@@ -275,7 +274,6 @@ const styles = StyleSheet.create({
     color: AppStyles.color.white
   },
   placeholder: {
-    fontFamily: AppStyles.fontName.text,
     color: "red"
   },
   InputContainer: {

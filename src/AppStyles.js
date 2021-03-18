@@ -36,10 +36,6 @@ export const AppStyles = {
   textInputWidth: {
     main: "80%"
   },
-  fontName: {
-    main: "Noto Sans",
-    bold: "Noto Sans"
-  },
   borderRadius: {
     main: 25,
     small: 5
@@ -82,7 +78,6 @@ export const HeaderButtonStyle = StyleSheet.create({
     color: AppStyles.color.tint,
     marginRight: 10,
     fontWeight: "normal",
-    fontFamily: AppStyles.fontName.main
   }
 });
 
@@ -90,7 +85,6 @@ export const ListStyle = StyleSheet.create({
   title: {
     fontSize: 16,
     color: AppStyles.color.subtitle,
-    fontFamily: AppStyles.fontName.bold,
     fontWeight: "bold"
   },
   subtitleView: {

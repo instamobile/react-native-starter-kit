@@ -28,7 +28,7 @@ class SignupScreen extends React.Component {
   }
 
   componentWillUnmount() {
-    this.authSubscription();
+    this.authSubscription && this.authSubscription();
   }
 
   onRegister = () => {
@@ -159,7 +159,6 @@ const styles = StyleSheet.create({
     color: AppStyles.color.white
   },
   placeholder: {
-    fontFamily: AppStyles.fontName.text,
     color: "red"
   },
   InputContainer: {

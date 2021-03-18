@@ -20,6 +20,6 @@ class StarterApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent("StarterApp", () => StarterApp);
+AppRegistry.registerComponent("rn_starter_kit", () => StarterApp);
 
 export default StarterApp;

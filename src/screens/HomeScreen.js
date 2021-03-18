@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     padding: Configuration.home.listing_item.offset
   },
   title: {
-    fontFamily: AppStyles.fontName.bold,
     fontWeight: "bold",
     color: AppStyles.color.title,
     fontSize: 25

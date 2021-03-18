@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     width: 25
   },
   btnText: {
-    fontFamily: AppStyles.fontName.bold,
     fontSize: 16,
     marginLeft: 10,
     marginTop: 2
