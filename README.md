@@ -13,6 +13,20 @@ Bootstrap your app development by using this awesome react native starter kit, i
 - Logout Functionality
 - Beautiful UI and transitions
 
+## Installation
+
+* Unarchive the downloaded .zip
+* Go to Firebase.com and create your own account and a project
+* In Firebase Console, create your own Android App and iOS App
+* Download the google-services.json file from your Firebase Console, and place it in the android folder of the starter kit (override the existing one)
+* Download the GoogleService-Info.json file from your Firebase Console, and place it in the ios folder of the starter kit (override the existing one)
+* Open a Terminal, locate the starter kit folder (where the package.json file is) and run:
+
+```
+npm install && react-native run-android
+```
+
+
 ## App Designs
 
 <a href="https://www.instamobile.io/app-templates/react-native-starter-kit-firebase/">
