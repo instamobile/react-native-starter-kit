@@ -68,7 +68,7 @@ const TabNavigator = createBottomTabNavigator(
     Home: { screen: HomeStack }
   },
   {
-    navigationOptions: ({ navigation }) => ({
+    defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
