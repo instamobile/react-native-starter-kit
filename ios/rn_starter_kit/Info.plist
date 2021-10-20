@@ -20,8 +20,24 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb334886581737278</string>
+				<string>com.googleusercontent.apps.763342324681-3lv5cu8e4q99e8uq552gr88uooadncih</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>334886581737278</string>
+	<key>FacebookClientToken</key>
+	<string>5fe43256fa12ade9f7c03e03e0f7873e</string>
+	<key>FacebookDisplayName</key>
+	<string>React Native Start Kit</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

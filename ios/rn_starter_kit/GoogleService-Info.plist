@@ -2,5 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>763342324681-3lv5cu8e4q99e8uq552gr88uooadncih.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.763342324681-3lv5cu8e4q99e8uq552gr88uooadncih</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>763342324681-1e5jt62sfkli8r6t0aaqbh2isihtoq9r.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCQs-1JUmNmrhbkHGGJceeQpD-CebrP3U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>763342324681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.instamobile.starterkit.rn.ios</string>
+	<key>PROJECT_ID</key>
+	<string>kaamru-ec015</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kaamru-ec015.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:763342324681:ios:73dc80a2781768cb8a5e18</string>
+	<key>DATABASE_URL</key>
+	<string>https://kaamru-ec015.firebaseio.com</string>
 </dict>
 </plist>

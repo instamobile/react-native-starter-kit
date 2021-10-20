@@ -12,7 +12,7 @@ import { AppStyles } from "../AppStyles";
 import firebase from '@react-native-firebase/app';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore'
-import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
+import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin";
 import { AsyncStorage } from "react-native";
 const FBSDK = require("react-native-fbsdk");
 const { LoginManager, AccessToken } = FBSDK;
@@ -27,7 +27,7 @@ class LoginScreen extends React.Component {
     };
     GoogleSignin.configure({
       webClientId:
-        "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com"
+        "763342324681-petgvkkeltcfi9qmgr8um8ohak81l953.apps.googleusercontent.com"
     });
   }
 
