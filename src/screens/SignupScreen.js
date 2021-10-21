@@ -54,7 +54,7 @@ class SignupScreen extends React.Component {
           .doc(user_uid)
           .get()
           .then(function(user) {
-            navigation.dispatch({ type: "Login", user: user });
+            navigation.navigate("DrawerStack",{user});
           })
           .catch(function(error) {
             const { code, message } = error;

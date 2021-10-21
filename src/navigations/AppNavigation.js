@@ -1,152 +1,126 @@
-import React from "react";
-import { Animated, Easing, Image, StyleSheet } from "react-native";
-import { connect } from "react-redux";
-import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack'
-import {createDrawerNavigator} from 'react-navigation-drawer'
-import {
-  createReactNavigationReduxMiddleware,
-  createReduxContainer
-} from "react-navigation-redux-helpers";
-import HomeScreen from "../screens/HomeScreen";
-import LoginScreen from "../screens/LoginScreen";
-import SignupScreen from "../screens/SignupScreen";
-import WelcomeScreen from "../screens/WelcomeScreen";
-import { AppIcon, AppStyles } from "../AppStyles";
-import { Configuration } from "../Configuration";
-import DrawerContainer from "../components/DrawerContainer";
+import React from 'react';
+import {Image, Pressable, StyleSheet} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import HomeScreen from '../screens/HomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+import SignupScreen from '../screens/SignupScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
+import {AppIcon, AppStyles} from '../AppStyles';
+import {Configuration} from '../Configuration';
+import DrawerContainer from '../components/DrawerContainer';
 
-const noTransitionConfig = () => ({
-  transitionSpec: {
-    duration: 0,
-    timing: Animated.timing,
-    easing: Easing.step0
-  }
-});
-
-const middleware = createReactNavigationReduxMiddleware(
-  state => state.nav
-);
+const Stack = createStackNavigator();
 
 // login stack
-const LoginStack = createStackNavigator(
-  {
-    Login: { screen: LoginScreen },
-    Signup: { screen: SignupScreen },
-    Welcome: { screen: WelcomeScreen }
-  },
-  {
-    initialRouteName: "Welcome",
-    headerMode: "float",
-    navigationOptions: ({ navigation }) => ({
-      headerTintColor: "red",
-      headerTitleStyle: styles.headerTitleStyle
-    }),
-    cardStyle: { backgroundColor: "#FFFFFF" }
-  }
+const LoginStack = () => (
+  <Stack.Navigator
+    initialRouteName="Welcome"
+    screenOptions={{
+      headerTintColor: 'red',
+      headerTitleStyle: styles.headerTitleStyle,
+      headerMode: 'float',
+    }}>
+    <Stack.Screen name="Welcome" component={WelcomeScreen} />
+    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Signup" component={SignupScreen} />
+    
+  </Stack.Navigator>
 );
 
-const HomeStack = createStackNavigator(
-  {
-    Home: { screen: HomeScreen }
-  },
-  {
-    initialRouteName: "Home",
-    headerMode: "float",
-
-    headerLayoutPreset: "center",
-    navigationOptions: ({ navigation }) => ({
-      headerTintColor: "red",
-      headerTitleStyle: styles.headerTitleStyle
-    }),
-    cardStyle: { backgroundColor: "#FFFFFF" }
-  }
+const HomeStack = () => (
+  <Stack.Navigator
+    initialRouteName="Home"
+    screenOptions={{
+      headerTintColor: 'red',
+      headerTitleStyle: styles.headerTitleStyle,
+      headerMode: 'float',
+    }}>
+    <Stack.Screen
+      name="Home"
+      component={HomeScreen}
+      options={({navigation}) => ({
+        headerLeft: () => (
+          <Pressable onPress={() => navigation.openDrawer()}>
+            <Image style={styles.iconStyle} source={AppIcon.images.menu} />
+          </Pressable>
+        ),
+        headerLeftContainerStyle: {paddingLeft: 10},
+      })}
+    />
+  </Stack.Navigator>
 );
 
-const TabNavigator = createBottomTabNavigator(
-  {
-    Home: { screen: HomeStack }
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        if (routeName === "Home") {
-          iconName = AppIcon.images.home;
-        }
+const BottomTab = createBottomTabNavigator();
 
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
+const TabNavigator = () => (
+  <BottomTab.Navigator
+    initialRouteName="Home"
+    screenOptions={{
+      tabBarInactiveTintColor: 'grey',
+      tabBarActiveTintColor: AppStyles.color.tint,
+      tabBarIcon: ({focused}) => {
         return (
           <Image
             style={{
-              tintColor: focused ? AppStyles.color.tint : AppStyles.color.grey
+              tintColor: focused ? AppStyles.color.tint : AppStyles.color.grey,
             }}
-            source={iconName}
+            source={AppIcon.images.home}
           />
         );
-      }
-    }),
-    initialLayout: {
-      height: 300
-    },
-    tabBarOptions: {
-      activeTintColor: AppStyles.color.tint,
-      inactiveTintColor: "gray",
-      style: {
-        height: Configuration.home.tab_bar_height
-      }
-    }
-  }
+      },
+      headerShown: false,
+    }}>
+    <BottomTab.Screen
+      options={{tabBarLabel: 'Home'}}
+      name="HomeStack"
+      component={HomeStack}
+    />
+  </BottomTab.Navigator>
 );
 
 // drawer stack
-const DrawerStack = createDrawerNavigator(
-  {
-    Tab: TabNavigator
-  },
-  {
-    drawerPosition: "left",
-    initialRouteName: "Tab",
-    drawerWidth: 200,
-    contentComponent: DrawerContainer
-  }
+const Drawer = createDrawerNavigator();
+const DrawerStack = () => (
+  <Drawer.Navigator
+    screenOptions={{
+      drawerStyle: {outerWidth: 200},
+      drawerPosition: 'left',
+      headerShown: false,
+    }}
+    drawerContent={({navigation}) => (
+      <DrawerContainer navigation={navigation} />
+    )}>
+    <Drawer.Screen name="Tab" component={TabNavigator} />
+  </Drawer.Navigator>
 );
 
 // Manifest of possible screens
-const RootNavigator = createStackNavigator(
-  {
-    LoginStack: { screen: LoginStack },
-    DrawerStack: { screen: DrawerStack }
-  },
-  {
-    // Default config for all screens
-    headerMode: "none",
-    initialRouteName: "DrawerStack",
-    transitionConfig: noTransitionConfig,
-    navigationOptions: ({ navigation }) => ({
-      color: "black"
-    })
-  }
+const RootNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="LoginStack"
+    screenOptions={{headerShown: false}}>
+    <Stack.Screen name="LoginStack" component={LoginStack} />
+    <Stack.Screen name="DrawerStack" component={DrawerStack} />
+  </Stack.Navigator>
 );
 
-const AppWithNavigationState = createReduxContainer(RootNavigator, "root");
-
-const mapStateToProps = state => ({
-  state: state.nav
-});
-
-const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
+const AppNavigator = () => (
+  <NavigationContainer>
+    <RootNavigator />
+  </NavigationContainer>
+);
 
 const styles = StyleSheet.create({
   headerTitleStyle: {
-    fontWeight: "bold",
-    textAlign: "center",
-    alignSelf: "center",
-    color: "black",
-    flex: 1,
-  }
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignSelf: 'center',
+    color: 'black',
+  },
+  iconStyle: {tintColor: AppStyles.color.tint, width: 30, height: 30},
 });
 
-export { RootNavigator, AppNavigator, middleware };
+export default AppNavigator;

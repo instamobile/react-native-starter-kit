@@ -77,8 +77,7 @@ class WelcomeScreen extends React.Component {
                 fullname: doc.displayName
               };
               if (doc.exists) {
-                navigation.dispatch({
-                  type: "Login",
+                navigation.navigate("DrawerStack",{
                   user: dict
                 });
               }
@@ -87,10 +86,11 @@ class WelcomeScreen extends React.Component {
               const { code, message } = error;
               alert(message);
             });
-          this.state.isLoading = false;
+          this.setState({ isLoading: false });
         })
         .catch(error => {
           const { code, message } = error;
+          this.setState({ isLoading: false });
           alert(message);
           // For details of error codes, see the docs
           // The message contains the default Firebase string
@@ -113,9 +113,8 @@ class WelcomeScreen extends React.Component {
             email: user.email,
             profileURL: user.photoURL
           };
-          this.props.navigation.dispatch({
-            type: "Login",
-            user: userDict
+          this.props.navigation.navigate('DrawerStack', {
+            user: userDict,
           });
         })
         .catch(error => {

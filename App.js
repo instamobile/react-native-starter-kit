@@ -1,12 +1,13 @@
 import React from "react";
 import { AppRegistry } from "react-native";
+import thunk from 'redux-thunk'
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 
 import AppReducer from "./src/reducers";
-import { AppNavigator, middleware } from "./src/navigations/AppNavigation";
+import AppNavigator from "./src/navigations/AppNavigation";
 
-const store = createStore(AppReducer, applyMiddleware(middleware));
+const store = createStore(AppReducer, applyMiddleware(thunk));
 
 console.disableYellowBox = true;
 

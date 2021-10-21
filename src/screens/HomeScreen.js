@@ -50,15 +50,15 @@ class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.props.navigation.setParams({
-      menuIcon: this.props.user.profileURL
-    });
+    // this.props.navigation.setParams({
+    //   menuIcon: this.props.user.profileURL
+    // });
   }
 
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>Welcome {this.props.user.email}</Text>
+        <Text style={styles.title}>Welcome dd</Text>
       </ScrollView>
     );
   }

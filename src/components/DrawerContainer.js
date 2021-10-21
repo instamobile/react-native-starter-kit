@@ -1,11 +1,12 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import MenuButton from "../components/MenuButton";
-import { AppIcon } from "../AppStyles";
+import React from 'react';
+import {AsyncStorage, StyleSheet, View} from 'react-native';
+import MenuButton from '../components/MenuButton';
+import {AppIcon} from '../AppStyles';
+import auther from '@react-native-firebase/auth';
 
 export default class DrawerContainer extends React.Component {
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     return (
       <View style={styles.content}>
         <View style={styles.container}>
@@ -13,7 +14,12 @@ export default class DrawerContainer extends React.Component {
             title="LOG OUT"
             source={AppIcon.images.logout}
             onPress={() => {
-              navigation.dispatch({ type: "Logout" });
+              auther()
+                .signOut()
+                .then(() => {
+                  AsyncStorage.clear()
+                  navigation.navigate('LoginStack')
+                });//logout on redux
             }}
           />
         </View>
@@ -25,13 +31,13 @@ export default class DrawerContainer extends React.Component {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center"
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   container: {
     flex: 1,
-    alignItems: "flex-start",
-    paddingHorizontal: 20
-  }
+    alignItems: 'flex-start',
+    paddingHorizontal: 20,
+  },
 });

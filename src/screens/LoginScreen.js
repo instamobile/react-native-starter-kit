@@ -51,7 +51,9 @@ class LoginScreen extends React.Component {
               AsyncStorage.setItem("@loggedInUserID:id", user_uid);
               AsyncStorage.setItem("@loggedInUserID:key", email);
               AsyncStorage.setItem("@loggedInUserID:password", password);
-              navigation.dispatch({ type: "Login", user: user });
+              console.log(user.data());
+              navigation.navigate("DrawerStack",{user: user.data() });
+              
             } else {
               alert("User does not exist. Please try again.");
             }
@@ -108,8 +110,7 @@ class LoginScreen extends React.Component {
                   .collection("users")
                   .doc(user.uid)
                   .set(data);
-                this.props.navigation.dispatch({
-                  type: "Login",
+                this.props.navigation.navigate("DrawerStack",{
                   user: userDict
                 });
               })
@@ -161,8 +162,7 @@ class LoginScreen extends React.Component {
           .collection("users")
           .doc(user.uid)
           .set(data);
-        this.props.navigation.dispatch({
-          type: "Login",
+        this.props.navigation.navigate("DrawerStack",{
           user: userDict
         });
       })
