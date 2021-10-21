@@ -1,5 +1,5 @@
 import React from 'react';
-import {AsyncStorage, StyleSheet, View} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import MenuButton from '../components/MenuButton';
 import {AppIcon} from '../AppStyles';
 import auther from '@react-native-firebase/auth';

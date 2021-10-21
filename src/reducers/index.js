@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';

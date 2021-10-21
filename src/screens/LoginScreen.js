@@ -16,11 +16,11 @@ import {
   GoogleSignin,
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
-import {AsyncStorage} from 'react-native';
-import { useDispatch } from 'react-redux';
-import { login } from '../reducers';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useDispatch} from 'react-redux';
 const FBSDK = require('react-native-fbsdk');
 const {LoginManager, AccessToken} = FBSDK;
+import {login} from '../reducers';
 
 function LoginScreen({navigation}) {
   const [loading, setLoading] = useState(false);
@@ -54,19 +54,19 @@ function LoginScreen({navigation}) {
               AsyncStorage.setItem('@loggedInUserID:id', user_uid);
               AsyncStorage.setItem('@loggedInUserID:key', email);
               AsyncStorage.setItem('@loggedInUserID:password', password);
-              dispatch(login(user.data()))
+              dispatch(login(user.data()));
               navigation.navigate('DrawerStack');
             } else {
               Alert.alert('User does not exist. Please try again.');
             }
           })
           .catch(function (error) {
-            const { message} = error;
+            const {message} = error;
             Alert.alert(message);
           });
       })
       .catch((error) => {
-        const { message} = error;
+        const {message} = error;
         Alert.alert(message);
         // For details of error codes, see the docs
         // The message contains the default Firebase string
@@ -109,7 +109,7 @@ function LoginScreen({navigation}) {
                   appIdentifier: 'rn-android-universal-listings',
                 };
                 firestore().collection('users').doc(user.uid).set(userData);
-                dispatch(login(userDict))
+                dispatch(login(userDict));
                 navigation.navigate('DrawerStack', {
                   user: userDict,
                 });
@@ -159,13 +159,13 @@ function LoginScreen({navigation}) {
         };
         console.log('data', data);
         firestore().collection('users').doc(user.uid).set(data);
-        dispatch(login(userDict))
+        dispatch(login(userDict));
         navigation.navigate('DrawerStack', {
           user: userDict,
         });
       })
       .catch((error) => {
-        const { message} = error;
+        const {message} = error;
         setLoading(false);
         Alert.alert(message);
       });
