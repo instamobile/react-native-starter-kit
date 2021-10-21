@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import Button from 'react-native-button';
-import {Text, View, StyleSheet, Alert} from 'react-native';
-import {AppStyles} from '../AppStyles';
-import {AsyncStorage, ActivityIndicator} from 'react-native';
+import {ActivityIndicator, Text, View, StyleSheet, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
-import {login} from '../reducers';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {useDispatch} from 'react-redux';
+import {login} from '../reducers';
+import {AppStyles} from '../AppStyles';
+
 
 function WelcomeScreen({navigation}) {
   const [isLoading, setIsLoading] = useState(true);
