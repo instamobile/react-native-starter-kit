@@ -22,7 +22,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
     "add": "^2.0.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "17.0.1",
     "react-native": "0.66.1",
     "react-native-button": "^3.0.1",
