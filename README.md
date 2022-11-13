@@ -23,7 +23,7 @@ Bootstrap your app development by using this awesome react native starter kit, i
 * Open a Terminal, locate the starter kit folder (where the package.json file is) and run:
 
 ```
-npm install && react-native run-android
+yarn install && react-native run-android
 ```
 
 
@@ -58,4 +58,4 @@ npm install && react-native run-android
 
       	* then rebuild app
 
-Coded with ❤️ by <a href="https://www.instamobile.io">Instamobile</a> and <a href="https://www.iosapptemplates.com">iOS App Templates</a>.
+Coded with ❤️ by <a href="https://instamobile.io">Instamobile</a> and <a href="https://iosapptemplates.com">iOS App Templates</a>.
