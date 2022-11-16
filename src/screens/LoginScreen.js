@@ -6,8 +6,9 @@ import {
   View,
   Alert,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
-import Button from 'react-native-button';
+// import Button from 'react-native-button';
 import {AppStyles} from '../AppStyles';
 import firebase from '@react-native-firebase/app';
 import auth from '@react-native-firebase/auth';
@@ -195,19 +196,17 @@ function LoginScreen({navigation}) {
           underlineColorAndroid="transparent"
         />
       </View>
-      <Button
-        containerStyle={styles.loginContainer}
-        style={styles.loginText}
+      <TouchableOpacity
+        style={styles.loginContainer}
         onPress={() => onPressLogin()}>
-        Log in
-      </Button>
+        <Text style={styles.loginText}>Log in</Text>
+      </TouchableOpacity>
       <Text style={styles.or}>OR</Text>
-      <Button
-        containerStyle={styles.facebookContainer}
-        style={styles.facebookText}
+      <TouchableOpacity
+        style={styles.facebookContainer}
         onPress={() => onPressFacebook()}>
-        Login with Facebook
-      </Button>
+        <Text style={styles.facebookText}>Login with Facebook</Text>
+      </TouchableOpacity>
       {loading ? (
         <ActivityIndicator
           style={{marginTop: 30}}
@@ -257,6 +256,7 @@ const styles = StyleSheet.create({
     color: AppStyles.color.text,
   },
   loginContainer: {
+    alignItems: 'center',
     width: AppStyles.buttonWidth.main,
     backgroundColor: AppStyles.color.tint,
     borderRadius: AppStyles.borderRadius.main,
@@ -284,6 +284,7 @@ const styles = StyleSheet.create({
     color: AppStyles.color.text,
   },
   facebookContainer: {
+    alignItems: 'center',
     width: 192,
     backgroundColor: AppStyles.color.facebook,
     borderRadius: AppStyles.borderRadius.main,

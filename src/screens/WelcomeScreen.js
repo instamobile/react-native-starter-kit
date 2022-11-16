@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import Button from 'react-native-button';
-import {ActivityIndicator, Text, View, StyleSheet, Alert} from 'react-native';
+import {
+  ActivityIndicator,
+  Text,
+  View,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useDispatch} from 'react-redux';
 import {login} from '../reducers';
 import {AppStyles} from '../AppStyles';
-
 
 function WelcomeScreen({navigation}) {
   const [isLoading, setIsLoading] = useState(true);
@@ -104,18 +109,16 @@ function WelcomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Say hello to your new app</Text>
-      <Button
-        containerStyle={styles.loginContainer}
-        style={styles.loginText}
+      <TouchableOpacity
+        style={styles.loginContainer}
         onPress={() => navigation.navigate('Login')}>
-        Log In
-      </Button>
-      <Button
-        containerStyle={styles.signupContainer}
-        style={styles.signupText}
+        <Text style={styles.loginText}>Log In</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.signupContainer}
         onPress={() => navigation.navigate('Signup')}>
-        Sign Up
-      </Button>
+        <Text style={styles.signupText}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -142,6 +145,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   loginContainer: {
+    alignItems: 'center',
     width: AppStyles.buttonWidth.main,
     backgroundColor: AppStyles.color.tint,
     borderRadius: AppStyles.borderRadius.main,
@@ -152,6 +156,7 @@ const styles = StyleSheet.create({
     color: AppStyles.color.white,
   },
   signupContainer: {
+    alignItems: 'center',
     width: AppStyles.buttonWidth.main,
     backgroundColor: AppStyles.color.white,
     borderRadius: AppStyles.borderRadius.main,
