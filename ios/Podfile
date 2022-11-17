@@ -1,14 +1,18 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '12.0'
+platform :ios, '13.0'
 
-$FirebaseSDKVersion = '8.0.0'
+
+pod 'Firebase', :modular_headers => true
+pod 'FirebaseCore', :modular_headers => true
+pod 'FirebaseCoreInternal', :modular_headers => true
+pod 'GoogleUtilities', :modular_headers => true
 
 target 'rn_starter_kit' do
   config = use_native_modules!
-  use_react_native!(:path => config["reactNativePath"])
-  
+  use_react_native!(:path => config[:reactNativePath],:hermes_enabled => true)
+
   target 'rn_starter_kitTests' do
     inherit! :complete
     # Pods for testing

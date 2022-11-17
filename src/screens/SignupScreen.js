@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Alert, StyleSheet, Text, TextInput, View} from 'react-native';
-import Button from 'react-native-button';
+import {Alert, StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
+// import Button from 'react-native-button';
 import {AppStyles} from '../AppStyles';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
@@ -90,12 +90,11 @@ function SignupScreen({navigation}) {
           underlineColorAndroid="transparent"
         />
       </View>
-      <Button
-        containerStyle={[styles.facebookContainer, {marginTop: 50}]}
-        style={styles.facebookText}
+      <TouchableOpacity
+        style={[styles.facebookContainer, {marginTop: 50}]}
         onPress={() => onRegister()}>
-        Sign Up
-      </Button>
+        <Text style={styles.facebookText}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -152,6 +151,7 @@ const styles = StyleSheet.create({
     color: AppStyles.color.text,
   },
   facebookContainer: {
+    alignItems: 'center',
     width: AppStyles.buttonWidth.main,
     backgroundColor: AppStyles.color.tint,
     borderRadius: AppStyles.borderRadius.main,
