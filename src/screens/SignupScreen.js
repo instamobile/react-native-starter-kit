@@ -6,16 +6,19 @@ import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import {useDispatch} from 'react-redux';
 import {login} from '../reducers';
+import LoadingModal from '../components/LoadingModal';
 
 function SignupScreen({navigation}) {
   const [fullname, setFullname] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
   const onRegister = () => {
+    setLoading(true);
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then((response) => {
@@ -43,6 +46,8 @@ function SignupScreen({navigation}) {
       .catch((error) => {
         const {code, message} = error;
         Alert.alert(message);
+      }).finally(() => {
+        setLoading(false);
       });
   };
 
@@ -95,6 +100,7 @@ function SignupScreen({navigation}) {
         onPress={() => onRegister()}>
         <Text style={styles.facebookText}>Sign Up</Text>
       </TouchableOpacity>
+      <LoadingModal isVisible={loading} />
     </View>
   );
 }

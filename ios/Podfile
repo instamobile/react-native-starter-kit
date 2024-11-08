@@ -1,29 +1,94 @@
-require_relative '../node_modules/react-native/scripts/react_native_pods'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '13.0'
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
 
+prepare_react_native_project!
 
-pod 'Firebase', :modular_headers => true
-pod 'FirebaseCore', :modular_headers => true
-pod 'FirebaseCoreInternal', :modular_headers => true
-pod 'GoogleUtilities', :modular_headers => true
+platform :ios, '17.0'
+install! 'cocoapods', :deterministic_uuids => false
+
+production = ENV["PRODUCTION"] == "1"
+
+require 'json'
+podfile_properties = JSON.parse(File.read('./Podfile.properties.json')) rescue {}
 
 target 'rn_starter_kit' do
+
+  post_integrate do |installer|
+    begin
+      expo_patch_react_imports!(installer)
+    rescue => e
+      Pod::UI.warn e
+    end
+  end
+
   config = use_native_modules!
-  use_react_native!(:path => config[:reactNativePath],:hermes_enabled => true)
 
-  target 'rn_starter_kitTests' do
-    inherit! :complete
-    # Pods for testing
+  use_frameworks! :linkage => :static
+  $RNFirebaseAsStaticFramework = true
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :production => production,
+    :hermes_enabled => flags[:hermes_enabled],
+    :fabric_enabled => flags[:fabric_enabled],
+    # :flipper_configuration => FlipperConfiguration.disabled,
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  # pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+  pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+
+
+
+  post_install do |installer|
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
+    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    # Workaround `Cycle inside FBReactNativeSpec` error for react-native 0.64
+    # Reference: https://github.com/software-mansion/react-native-screens/issues/842#issuecomment-812543933
+    installer.pods_project.targets.each do |target|
+      if (target.name&.eql?('FBReactNativeSpec'))
+        target.build_phases.each do |build_phase|
+          if (build_phase.respond_to?(:name) && build_phase.name.eql?('[CP-User] Generate Specs'))
+            target.build_phases.move(build_phase, 0)
+          end
+        end
+      end
+
+      if target.name == "AmplifyRTNCore"
+        target.build_phases.each do |build_phase|
+          if build_phase.is_a?(Xcodeproj::Project::Object::PBXSourcesBuildPhase)
+            build_phase.files.delete_if do |file|
+              file.file_ref.path.include?("JKBigInteger") || file.file_ref.path.include?("JKBigDecimal")
+            end
+          end
+        end
+      end
+  
+
+      if target.name == 'BoringSSL-GRPC'
+        target.source_build_phase.files.each do |file|
+          if file.settings && file.settings['COMPILER_FLAGS']
+            flags = file.settings['COMPILER_FLAGS'].split
+            flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+            file.settings['COMPILER_FLAGS'] = flags.join(' ')
+          end
+        end
+      end
+    end
   end
-end
 
-target 'rn_starter_kit-tvOS' do
-  # Pods for rn_starter_kit-tvOS
-
-  target 'rn_starter_kit-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 end

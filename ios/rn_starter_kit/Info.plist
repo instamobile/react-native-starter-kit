@@ -25,7 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb334886581737278</string>
+				<string>fb1288726485109267</string>
 				<string>com.googleusercontent.apps.763342324681-3lv5cu8e4q99e8uq552gr88uooadncih</string>
 			</array>
 		</dict>
@@ -33,33 +33,30 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>334886581737278</string>
+	<string>1288726485109267</string>
 	<key>FacebookClientToken</key>
-	<string>5fe43256fa12ade9f7c03e03e0f7873e</string>
+	<string>d6e1669fa01421ca37003d8725923a66</string>
 	<key>FacebookDisplayName</key>
 	<string>React Native Start Kit</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+
+		  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
 				<true/>
 			</dict>
-		</dict>
-	</dict>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>arm64</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

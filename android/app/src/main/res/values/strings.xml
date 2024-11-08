@@ -1,4 +1,7 @@
+
 <resources>
     <string name="app_name">StarterApp</string>
-    <string name="facebook_app_id">285315185217069</string>
+    <string name="facebook_app_id">1288726485109267</string>
+    <string name="fb_login_protocol_scheme">fb1288726485109267</string>
+    <string name="facebook_client_token">d6e1669fa01421ca37003d8725923a66</string> 
 </resources>

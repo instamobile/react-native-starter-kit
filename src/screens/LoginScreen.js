@@ -22,6 +22,7 @@ import {useDispatch} from 'react-redux';
 const FBSDK = require('react-native-fbsdk');
 const {LoginManager, AccessToken} = FBSDK;
 import {login} from '../reducers';
+import LoadingModal from '../components/LoadingModal';
 
 function LoginScreen({navigation}) {
   const [loading, setLoading] = useState(false);
@@ -38,10 +39,12 @@ function LoginScreen({navigation}) {
   }, []);
 
   const onPressLogin = () => {
+
     if (email.length <= 0 || password.length <= 0) {
       Alert.alert('Please fill out the required fields.');
       return;
     }
+    setLoading(true);
     auth()
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
@@ -72,10 +75,13 @@ function LoginScreen({navigation}) {
         // For details of error codes, see the docs
         // The message contains the default Firebase string
         // representation of the error
+      }).finally(() => {
+        setLoading(false);
       });
   };
 
   const onPressFacebook = () => {
+    setLoading(true);
     LoginManager.logInWithPermissions([
       'public_profile',
       'user_friends',
@@ -124,7 +130,9 @@ function LoginScreen({navigation}) {
       (error) => {
         Alert.alert('Sign in error', error);
       },
-    );
+    ).finally(() => {
+      setLoading(false);
+    });
   };
 
   const onPressGoogle = () => {
@@ -167,8 +175,9 @@ function LoginScreen({navigation}) {
       })
       .catch((error) => {
         const {message} = error;
-        setLoading(false);
         Alert.alert(message);
+      }).finally(() => {
+        setLoading(false);
       });
   };
 
@@ -207,21 +216,14 @@ function LoginScreen({navigation}) {
         onPress={() => onPressFacebook()}>
         <Text style={styles.facebookText}>Login with Facebook</Text>
       </TouchableOpacity>
-      {loading ? (
-        <ActivityIndicator
-          style={{marginTop: 30}}
-          size="large"
-          animating={loading}
-          color={AppStyles.color.tint}
-        />
-      ) : (
+      <LoadingModal isVisible={loading} />
         <GoogleSigninButton
           style={styles.googleContainer}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Light}
           onPress={onPressGoogle}
         />
-      )}
+      
     </View>
   );
 }

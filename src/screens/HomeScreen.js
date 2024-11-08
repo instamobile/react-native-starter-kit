@@ -1,10 +1,10 @@
-import React, {useLayoutEffect} from 'react';
-import {ScrollView, StyleSheet, Text} from 'react-native';
-import {connect, useSelector} from 'react-redux';
-import { AppStyles} from '../AppStyles';
-import {Configuration} from '../Configuration';
+import React, { useLayoutEffect } from 'react';
+import { ScrollView, StyleSheet, Text } from 'react-native';
+import { connect, useSelector } from 'react-redux';
+import { AppStyles } from '../AppStyles';
+import { Configuration } from '../Configuration';
 
-function HomeScreen({navigation}) {
+function HomeScreen({ navigation }) {
   const auth = useSelector((state) => state.auth);
 
   useLayoutEffect(() => {
@@ -13,9 +13,28 @@ function HomeScreen({navigation}) {
     });
   }, []);
 
+  const getUserName = () => {
+    if (auth.user) {
+      if (auth.user.fullName) {
+        return auth.user.fullName;
+      }
+      const { firstName, lastName } = auth.user;
+      if (firstName && lastName) {
+        return `${firstName} ${lastName}`;
+      } else if (firstName) {
+        return firstName;
+      } else if (lastName) {
+        return lastName;
+      }
+    }
+    return 'User';
+  };
+
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Welcome {auth.user?.fullname ?? 'User'}</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>
+        Welcome {getUserName()}
+      </Text>
     </ScrollView>
   );
 }
@@ -24,18 +43,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: Configuration.home.listing_item.offset,
   },
   title: {
     fontWeight: 'bold',
     color: AppStyles.color.title,
     fontSize: 25,
-  },
-  userPhoto: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    marginLeft: 5,
   },
 });
 
